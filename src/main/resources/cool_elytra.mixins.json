@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "edu.jorbonism.cool_elytra.mixin",
+	"compatibilityLevel": "JAVA_16",
+	"client": [
+		""
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

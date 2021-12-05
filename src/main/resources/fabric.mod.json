@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "unbound_elytra",
+	"version": "${version}",
+	
+	"name": "Unbound Elytra",
+	"description": "Overhauls elytra flight to be omnidirectional.",
+	"authors": [
+		"Jorbonism"
+	],
+	"contact": {
+		"homepage": "https://github.com/Jorbon/unbound_elytra",
+		"sources": "https://github.com/Jorbon/unbound_elytra"
+	},
+	
+	"license": "GPL-3.0",
+	"icon": "assets/unbound_elytra/icon.png",
+
+	"entrypoints": {
+		"main": [
+			"edu.jorbonism.unbound_elytra.UnboundElytra"
+		]
+	},
+
+	"mixins": [
+		"unbound_elytra.mixins.json"
+	],
+	
+	"depends": {
+		"fabricloader": ">=0.11.6",
+		"fabric": "*",
+		"minecraft": ">=1.17",
+		"java": ">=16"
+	}
+}
