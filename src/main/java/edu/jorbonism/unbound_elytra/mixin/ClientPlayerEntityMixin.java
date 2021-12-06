@@ -25,7 +25,6 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	@Inject(at = @At("RETURN"), method = "<init>(Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/client/world/ClientWorld;Lnet/minecraft/client/network/ClientPlayNetworkHandler;Lnet/minecraft/stat/StatHandler;Lnet/minecraft/client/recipebook/ClientRecipeBook;ZZ)V")
 	public void init(MinecraftClient client, ClientWorld world, ClientPlayNetworkHandler networkHandler, StatHandler stats, ClientRecipeBook recipeBook, boolean lastSneaking, boolean lastSprinting, CallbackInfo ci) {
 		UnboundElytra.left = UnboundElytra.getAssumedLeft(this.getYaw());
-		System.out.println("Left vector initialized for " + this.getYaw() + " yaw");
 	}
 
 	public void changeLookDirection(double cursorDeltaX, double cursorDeltaY) {
