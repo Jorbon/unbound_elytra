@@ -16,8 +16,9 @@
 	"license": "GPL-3.0",
 	"icon": "assets/unbound_elytra/icon.png",
 
+	"environment": "client",
 	"entrypoints": {
-		"main": [
+		"client": [
 			"edu.jorbonism.unbound_elytra.UnboundElytra"
 		]
 	},

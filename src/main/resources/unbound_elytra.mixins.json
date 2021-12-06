@@ -1,10 +1,11 @@
 {
 	"required": true,
 	"minVersion": "0.8",
-	"package": "edu.jorbonism.cool_elytra.mixin",
+	"package": "edu.jorbonism.unbound_elytra.mixin",
 	"compatibilityLevel": "JAVA_16",
 	"client": [
-		""
+		"ClientPlayerEntityMixin",
+		"GameRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
