@@ -41,7 +41,7 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 		UnboundElytra.left = UnboundElytra.left.subtract(facing.multiply(UnboundElytra.left.dotProduct(facing))).normalize();
 
 		
-		facing = UnboundElytra.rotateAxisAngle(facing, UnboundElytra.left, 0.15 * cursorDeltaY * UnboundElytra.TORAD);
+		facing = UnboundElytra.rotateAxisAngle(facing, UnboundElytra.left, -0.15 * cursorDeltaY * UnboundElytra.TORAD);
 		UnboundElytra.left = UnboundElytra.rotateAxisAngle(UnboundElytra.left, facing, 0.15 * cursorDeltaX * UnboundElytra.TORAD);
 		
 		double deltaY = -Math.asin(facing.getY()) * UnboundElytra.TODEG - this.getPitch();

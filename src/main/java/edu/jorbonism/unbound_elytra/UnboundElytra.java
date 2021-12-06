@@ -3,6 +3,15 @@ package edu.jorbonism.unbound_elytra;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.util.math.Vec3d;
 
+/*
+to do:
+add config with:
+	sensitivity
+	inversions
+	yaw strength
+add yaw mechanic
+*/
+
 public class UnboundElytra implements ClientModInitializer {
 	public void onInitializeClient() {
 		
