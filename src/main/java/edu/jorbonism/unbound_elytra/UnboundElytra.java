@@ -18,6 +18,7 @@ public class UnboundElytra implements ClientModInitializer {
 	}
 
 	public static Vec3d left;
+	//public static boolean shift = false;
 	public static final double TORAD = Math.PI / 180;
 	public static final double TODEG = 1 / TORAD;
 

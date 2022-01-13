@@ -30,7 +30,7 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	public void changeLookDirection(double cursorDeltaX, double cursorDeltaY) {
 		Vec3d facing = this.getRotationVecClient();
 
-		if (!this.getFlag(7)) {
+		if (!this.isFallFlying()) {
 			// set left vector to the assumed upright left if not in flight
 			UnboundElytra.left = UnboundElytra.getAssumedLeft(this.getYaw());
 			super.changeLookDirection(cursorDeltaX, cursorDeltaY);
@@ -39,9 +39,18 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 
 		UnboundElytra.left = UnboundElytra.left.subtract(facing.multiply(UnboundElytra.left.dotProduct(facing))).normalize();
 
-		
+		// pitch
 		facing = UnboundElytra.rotateAxisAngle(facing, UnboundElytra.left, -0.15 * cursorDeltaY * UnboundElytra.TORAD);
-		UnboundElytra.left = UnboundElytra.rotateAxisAngle(UnboundElytra.left, facing, 0.15 * cursorDeltaX * UnboundElytra.TORAD);
+
+		if (this.isSneaking()) {
+			// roll
+			UnboundElytra.left = UnboundElytra.rotateAxisAngle(UnboundElytra.left, facing, -0.15 * cursorDeltaX * UnboundElytra.TORAD);
+		} else {
+			// yaw
+			Vec3d up = facing.crossProduct(UnboundElytra.left);
+			facing = UnboundElytra.rotateAxisAngle(facing, up, -0.15 * cursorDeltaX * UnboundElytra.TORAD);
+			UnboundElytra.left = UnboundElytra.rotateAxisAngle(UnboundElytra.left, up, -0.15 * cursorDeltaX * UnboundElytra.TORAD);
+		}
 		
 		double deltaY = -Math.asin(facing.getY()) * UnboundElytra.TODEG - this.getPitch();
 		double deltaX = -Math.atan2(facing.getX(), facing.getZ()) * UnboundElytra.TODEG - this.getYaw();
