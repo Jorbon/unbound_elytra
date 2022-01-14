@@ -5,11 +5,7 @@ import net.minecraft.util.math.Vec3d;
 
 /*
 to do:
-add config with:
-	sensitivity
-	inversions
-	yaw strength
-add yaw mechanic
+idk man
 */
 
 public class UnboundElytra implements ClientModInitializer {
